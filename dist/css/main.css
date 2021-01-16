@@ -145,10 +145,9 @@ h3 {
     h2.sm-heading.other,
     h3.sm-heading.other {
       background: rgba(161, 54, 5, 0.4); }
-  h1 span.text-secondary,
-  h2 span.text-secondary,
-  h3 span.text-secondary {
-    color: #ba875c; }
+
+.text-secondary {
+  color: #ba875c; }
 
 a {
   color: whitesmoke;
@@ -190,6 +189,8 @@ main {
   .about-info .bio {
     grid-area: bio;
     font-size: 1.5rem; }
+    .about-info .bio .text-secondary {
+      font-weight: bold; }
   .about-info .job-1 {
     grid-area: job1; }
   .about-info .job-2 {
@@ -197,9 +198,14 @@ main {
   .about-info .job-3 {
     grid-area: job3; }
   .about-info .job {
+    text-align: center;
     border-bottom: #ba875c 5px solid;
     padding: 0.5rem;
-    background: rgba(161, 54, 5, 0.8); }
+    background: rgba(161, 54, 5, 0.8);
+    font-size: 1.1rem; }
+    .about-info .job > h3 {
+      color: #c9a180;
+      font-weight: bold; }
 
 /* FOOTER PROPERTIES */
 #main-footer {

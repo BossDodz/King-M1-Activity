@@ -39,11 +39,11 @@ h3 {
       background: rgba(darken($primary-color-other, 10), 0.4);
     }
   }
+}
 
-  // LAST NAME/Secondary text properties
-  span.text-secondary {
-    color: $secondary-color;
-  }
+// LAST NAME/Secondary text properties
+.text-secondary {
+  color: $secondary-color;
 }
 
 // Links properties
@@ -110,6 +110,10 @@ main {
   .bio {
     grid-area: bio;
     font-size: 1.5rem;
+
+    .text-secondary {
+      font-weight: bold;
+    }
   }
 
   .job-1 {
@@ -127,9 +131,16 @@ main {
   // Job Box Container and Properties
 
   .job {
+    text-align: center;
     border-bottom: $secondary-color 5px solid;
     padding: 0.5rem;
     background: rgba(darken($primary-color-other, 10), 0.8);
+    font-size: 1.1rem;
+
+    & > h3 {
+      color: lighten($secondary-color, 10);
+      font-weight: bold;
+    }
   }
 }
 
