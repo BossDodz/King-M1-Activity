@@ -1,6 +1,7 @@
 /* IMPORT MIXINS and OTHER CONFIG FILES */
 /* MAIN VARIABLES */
 /* MIXINS */
+/* MEDIA QUERY MIXINS */
 .menu-btn {
   position: absolute;
   z-index: 3;
@@ -80,7 +81,7 @@
       font-size: 30px;
       text-transform: uppercase;
       padding: 1rem 0;
-      font-weight: 300;
+      font-weight: 400;
       color: whitesmoke;
       text-decoration: none;
       transition: all 0.2s ease-out; }
@@ -165,3 +166,35 @@ main {
     overflow: hidden; }
     main#home h1 {
       margin-top: 20vh; }
+
+/* IMPORT MOBILE SCSS FOR RESPONSIVENESS */
+/* MOBILE CONFIGS */
+@media screen and (max-width: 768px) {
+  main {
+    align-items: center;
+    text-align: center; }
+    main .lg-heading {
+      line-height: 1;
+      margin-bottom: 1rem; }
+  ul.menu-nav,
+  div.menu-image {
+    float: none;
+    width: 100%;
+    min-height: 0; }
+    ul.menu-nav.show,
+    div.menu-image.show {
+      transform: translate3d(0, 0, 0); }
+  .menu-nav {
+    height: 75vh;
+    transform: translate3d(-100%, 0, 0);
+    font-size: 24px; }
+  .menu-image {
+    height: 25vh;
+    transform: translate3d(100%, 0, 0); }
+    .menu-image .portrait {
+      width: 150px;
+      height: 150px; } }
+
+@media screen and (max-width: 500px) {
+  main#home h1 {
+    margin-top: 10vh; } }
