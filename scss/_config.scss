@@ -3,6 +3,8 @@
 /* MAIN VARIABLES */
 $primary-color: #444;
 $secondary-color: #ba875c; //rgb(255, 142, 13);rgb(0, 70, 201);
+$primary-color-other: rgb(211, 71, 6);
+$primary-color-no-overlay: #7c442a;
 $show-home-image: true;
 $home-image: url(../img/bg.jpg);
 $background-opacity: 0.75;
@@ -24,7 +26,7 @@ $my-img: url(../img/profile.jpg);
       background-attachment: fixed;
       background-size: cover;
 
-      // Overlay pseudoelement
+      // Overlay pseud-oelement
       &::after {
         content: "";
         position: absolute;
@@ -36,6 +38,19 @@ $my-img: url(../img/profile.jpg);
         background: rgba($primary-color, $background-opacity);
       }
     }
+
+    &#bg-img-about {
+      background: $primary-color-no-overlay;
+    }
+  }
+}
+
+/* SET TEXT COLOR */
+@function setTextColor($bg-color) {
+  @if (lightness($bg-color) > 40) {
+    @return black;
+  } @else {
+    @return whitesmoke;
   }
 }
 
