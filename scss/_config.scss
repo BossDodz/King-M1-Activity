@@ -1,0 +1,39 @@
+// Mixins and variables are here
+
+/* MAIN VARIABLES */
+$primary-color: #444;
+$secondary-color: #ba875c; //rgb(255, 142, 13);rgb(0, 70, 201);
+$show-home-image: true;
+$home-image: url(../img/bg.jpg);
+$background-opacity: 0.75;
+
+/* MIXINS */
+
+// Transition mixin
+@mixin easeOut {
+  transition: all 0.2s ease-out;
+}
+
+// Show homepage bg image mixin
+@mixin background {
+  @if $show-home-image {
+    //BG image properties
+    &#bg-img {
+      background: $home-image;
+      background-attachment: fixed;
+      background-size: cover;
+
+      // Overlay pseudoelement
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        background: rgba($primary-color, $background-opacity);
+      }
+    }
+  }
+}
