@@ -144,6 +144,48 @@ main {
   }
 }
 
+/* PROJECTS GRID PROPERTIES */
+.projects {
+  // Display projects as grid
+  display: grid;
+  grid-gap: 0.7rem;
+  grid-template-columns: repeat(3, 1fr);
+
+  img {
+    width: 100%;
+    height: 200px;
+    border: 3px solid whitesmoke;
+
+    &:hover {
+      opacity: 0.5;
+      border-color: $secondary-color;
+      @include easeOut;
+    }
+  }
+}
+
+/* PROJECT BUTTON STYLES */
+.btn-git {
+  display: block;
+  background: rgba(darken($primary-color-no-overlay, 10), 0.8);
+  color: setTextColor($primary-color-no-overlay);
+  padding: 0.5rem 1rem;
+  border: 0;
+  margin-bottom: 0.3rem;
+
+  .project-name {
+    margin-left: 5px;
+  }
+
+  &:hover {
+    background: $secondary-color;
+  }
+}
+
+/* .btn-github{
+  @extend .btn
+} */
+
 /* FOOTER PROPERTIES */
 #main-footer {
   text-align: center;
@@ -152,5 +194,6 @@ main {
   color: setTextColor($primary-color-no-overlay);
   height: 60px;
 }
+
 /* IMPORT MOBILE SCSS FOR RESPONSIVENESS */
 @import "mobile";

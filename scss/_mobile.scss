@@ -2,10 +2,18 @@
 
 // Widescreens
 @include mediaXL {
+  // Change grid template columns to 4 fr
+  .projects {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 
 // Desktops and Laptops
 @include mediaLg {
+  // Change grid template columns to 3 fr
+  .projects {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 // Tablets & Small laptops
@@ -63,11 +71,21 @@
       "job3";
     grid-template-columns: 1fr;
   }
+
+  // Change grid template columns to 2 fr
+  .projects {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 // Smartphones
 @include mediaSm {
   main#home h1 {
     margin-top: 10vh;
+  }
+
+  // Change grid template columns to 1 fr
+  .projects {
+    grid-template-columns: 1fr;
   }
 }
