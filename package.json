@@ -3,8 +3,10 @@
   "version": "1.0.0",
   "description": "My Activity",
   "main": "index.js",
+  "homepage": "https://BossDodz.github.io/King-M1-Activity",
   "scripts": {
-    "sass": "node-sass -w scss/ -o dist/css/ --recursive"
+    "sass": "node-sass -w scss/ -o dist/css/ --recursive",
+    "deploy": "gh-pages -d dist"
   },
   "author": "Charles King",
   "license": "MIT",
