@@ -76,6 +76,19 @@
   .projects {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  // Stack info in contact
+  .boxes {
+    grid-template-areas:
+      "box-email"
+      "box-number";
+    grid-template-columns: 1fr;
+  }
+
+  // Change header size
+  h1 {
+    font-size: 4, 5rem;
+  }
 }
 
 // Smartphones

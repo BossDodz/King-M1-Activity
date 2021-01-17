@@ -3,12 +3,13 @@
   "version": "1.0.0",
   "description": "My Activity",
   "main": "index.js",
-  "scripts": { 
-    "sass": "node-sass -w scss/ -o dist/css/ --recursive" 
-  }, 
+  "scripts": {
+    "sass": "node-sass -w scss/ -o dist/css/ --recursive"
+  },
   "author": "Charles King",
   "license": "MIT",
   "dependencies": {
+    "clipboard": "^2.0.6",
     "node-sass": "^5.0.0"
   }
 }

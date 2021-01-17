@@ -221,6 +221,58 @@ main {
       border-color: #ba875c;
       transition: all 0.2s ease-out; }
 
+/* CONTACT PAGE PROPERTIES */
+.boxes {
+  display: grid;
+  grid-template-areas: "box-email box-number";
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 30px; }
+  .boxes .box-email-area {
+    grid-area: box-email; }
+  .boxes .box-number-area {
+    grid-area: box-number; }
+  .boxes .box {
+    text-align: center;
+    border-bottom: #ba875c 5px solid;
+    padding: 0;
+    margin: 0;
+    background: rgba(161, 54, 5, 0.8);
+    font-size: 1.1rem; }
+    .boxes .box > span {
+      color: #c9a180;
+      font-weight: bold;
+      font-size: 1.5rem; }
+    .boxes .box.box-email .contacts, .boxes .box.box-number .contacts {
+      list-style: none;
+      font-size: 1.4rem;
+      margin: 0;
+      padding: 1rem; }
+      .boxes .box.box-email .contacts .list-container, .boxes .box.box-number .contacts .list-container {
+        position: relative;
+        cursor: pointer; }
+        .boxes .box.box-email .contacts .list-container > li, .boxes .box.box-number .contacts .list-container > li {
+          padding: 1rem 0; }
+        .boxes .box.box-email .contacts .list-container .list-overlay, .boxes .box.box-number .contacts .list-container .list-overlay {
+          position: absolute;
+          top: 0;
+          left: 0;
+          background: #ba875c;
+          height: 100%;
+          width: 0;
+          overflow: hidden; }
+          .boxes .box.box-email .contacts .list-container .list-overlay.selected, .boxes .box.box-number .contacts .list-container .list-overlay.selected {
+            background: #ba875c;
+            width: 100%;
+            content: "Copied"; }
+          .boxes .box.box-email .contacts .list-container .list-overlay .list-text, .boxes .box.box-number .contacts .list-container .list-overlay .list-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            white-space: nowrap; }
+        .boxes .box.box-email .contacts .list-container:hover .list-overlay, .boxes .box.box-number .contacts .list-container:hover .list-overlay {
+          transition: all 0.2s ease-out; }
+
 /* PROJECT BUTTON STYLES */
 .btn-git {
   display: block;
@@ -284,7 +336,12 @@ main {
     grid-template-areas: "bioimage" "bio" "job1" "job2" "job3";
     grid-template-columns: 1fr; }
   .projects {
-    grid-template-columns: repeat(2, 1fr); } }
+    grid-template-columns: repeat(2, 1fr); }
+  .boxes {
+    grid-template-areas: "box-email" "box-number";
+    grid-template-columns: 1fr; }
+  h1 {
+    font-size: 4, 5rem; } }
 
 @media screen and (max-width: 500px) {
   main#home h1 {

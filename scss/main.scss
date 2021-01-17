@@ -164,6 +164,90 @@ main {
   }
 }
 
+/* CONTACT PAGE PROPERTIES */
+.boxes {
+  // Set box grids
+  display: grid;
+  grid-template-areas: "box-email box-number";
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 30px;
+
+  // Create grid area templates
+  .box-email-area {
+    grid-area: box-email;
+  }
+
+  .box-number-area {
+    grid-area: box-number;
+  }
+
+  // Box properties
+  .box {
+    text-align: center;
+    border-bottom: $secondary-color 5px solid;
+    padding: 0;
+    margin: 0;
+    background: rgba(darken($primary-color-other, 10), 0.8);
+    font-size: 1.1rem;
+
+    & > span {
+      color: lighten($secondary-color, 10);
+      font-weight: bold;
+      font-size: 1.5rem;
+    }
+
+    // Email Box Properties
+
+    &.box-email,
+    &.box-number {
+      & .contacts {
+        list-style: none;
+        font-size: 1.4rem;
+        margin: 0;
+        padding: 1rem;
+
+        & .list-container {
+          position: relative;
+          cursor: pointer;
+
+          & > li {
+            padding: 1rem 0;
+          }
+
+          & .list-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: $secondary-color;
+            height: 100%;
+            width: 0;
+            overflow: hidden;
+
+            &.selected {
+              background: $secondary-color;
+              width: 100%;
+              content: "Copied";
+            }
+
+            & .list-text {
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              white-space: nowrap;
+            }
+          }
+
+          &:hover .list-overlay {
+            //width: 100%;
+            @include easeOut;
+          }
+        }
+      }
+    }
+  }
+}
+
 /* PROJECT BUTTON STYLES */
 .btn-git {
   display: block;
